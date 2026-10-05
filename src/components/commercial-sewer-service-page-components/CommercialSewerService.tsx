@@ -72,7 +72,7 @@ const CommercialSewerService = () => {
                 </a>
 
                 <a
-                  href="/commercial-sewer/"
+                  href="/commercial-sewer-service"
                   className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10"
                 >
                   Our Sewer Services
@@ -84,8 +84,8 @@ const CommercialSewerService = () => {
           {/* IMAGE SIDE */}
           <div className="relative min-h-[500px] lg:min-h-0">
             <img
-              src="https://drainsolutionplus.com/wp-content/uploads/2023/09/drainage-commercial.jpg"
-              alt="Commercial sewer service"
+              src="/images/client-images/slab-sewer-repair.webp"
+              alt="Sewer line repair beneath a concrete slab at a commercial property"
               className="absolute inset-0 h-full w-full object-cover"
             />
 
@@ -95,7 +95,7 @@ const CommercialSewerService = () => {
             <div className="absolute bottom-8 left-6 flex items-center gap-5 bg-white px-6 py-5 shadow-2xl sm:left-10 sm:px-8">
               <div>
                 <span className="block text-5xl font-black leading-none text-[#014484]">
-                  25
+                  10
                 </span>
               </div>
 
@@ -243,8 +243,8 @@ const CommercialSewerService = () => {
           <div className="relative">
             <div className="overflow-hidden">
               <img
-                src="https://drainsolutionplus.com/wp-content/uploads/2023/09/commercial-services-drain.webp"
-                alt="Commercial sewer repair"
+                src="/images/client-images/emergency-main-sewer-clogged.webp"
+                alt="Blocked sewer line requiring commercial sewer repair"
                 className="h-[430px] w-full object-cover sm:h-[540px]"
               />
             </div>

@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.jpg",
-        alt: "Drain Solutions Plus drain and sewer services in Bergen County NJ",
+        url: "/images/njj.webp",
+        alt: "Northern New Jersey service area map showing coverage that includes Bergen County",
       },
     ],
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Drain Cleaning & Sewer Services Throughout Bergen County, NJ",
     description: "Residential and commercial drain, sewer, plumbing and pump services throughout Bergen County, NJ.",
-    images: ["https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.jpg"],
+    images: ["/images/njj.webp"],
   },
   other: {
     referrer: "strict-origin-when-cross-origin",
@@ -70,10 +70,10 @@ const jsonLd = {
       "url": "https://www.drainsolutionplus.com/",
       "telephone": "+1-201-881-9622",
       "description": "Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, leak detection, and related services throughout Northern New Jersey.",
-      "image": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.jpg",
+      "image": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.webp",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.jpg"
+        "url": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.webp"
       },
       "address": {
         "@type": "PostalAddress",
@@ -166,16 +166,12 @@ export default function BergenCountyLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
         {children}
-      </body>
-    </html>
+    </>
   );
 }

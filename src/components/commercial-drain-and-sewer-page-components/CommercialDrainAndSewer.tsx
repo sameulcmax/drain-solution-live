@@ -95,8 +95,8 @@ const CommercialDrainAndSewer: React.FC = () => {
           {/* RIGHT IMAGE / BADGE */}
           <div className="relative min-h-[500px] lg:min-h-0">
             <img
-              src="https://drainsolutionplus.com/wp-content/uploads/2023/09/drainage-commercial.jpg"
-              alt="Commercial drain and sewer installation and repair"
+              src="/images/client-images/hydro-jetting.webp"
+              alt="Technician using hydro-jetting equipment to clean a commercial drain"
               className="absolute inset-0 h-full w-full object-cover"
             />
 
@@ -106,7 +106,7 @@ const CommercialDrainAndSewer: React.FC = () => {
             <div className="absolute bottom-8 left-6 flex items-center gap-5 bg-white px-6 py-5 shadow-2xl sm:left-10 sm:px-8">
               <div>
                 <span className="block text-5xl font-black leading-none text-[#014484]">
-                  25
+                  10
                 </span>
               </div>
 
@@ -249,8 +249,8 @@ const CommercialDrainAndSewer: React.FC = () => {
           <div className="relative">
             <div className="overflow-hidden">
               <img
-                src="https://drainsolutionplus.com/wp-content/uploads/2023/09/commercial-services-drain.webp"
-                alt="Commercial drain and sewer pipe installation"
+                src="/images/client-images/emergency-main-sewer-clogged.webp"
+                alt="Clogged main sewer line requiring professional drain service"
                 className="h-[440px] w-full object-cover sm:h-[540px]"
               />
             </div>
@@ -375,7 +375,7 @@ const CommercialDrainAndSewer: React.FC = () => {
 
               <p className="mt-4 text-sm leading-7 text-white/70">
                 Eliminate puddling water, clear stubborn blockages, and safeguard your
-                facility with 25 years of specialized commercial expertise.
+                facility with 10 years of specialized commercial expertise.
               </p>
             </div>
 

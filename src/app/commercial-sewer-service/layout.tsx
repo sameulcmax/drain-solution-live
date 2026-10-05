@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: 'Drain Solutions Plus',
     images: [
       {
-        url: 'https://www.drainsolutionplus.com/images/commercial-sewer-service.jpg',
+        url: '/images/client-images/slab-sewer-repair.webp',
         alt: 'Commercial sewer cleaning and sewer line repair services by Drain Solutions Plus in New Jersey',
       },
     ],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Commercial Sewer Cleaning & Repair NJ | Drain Solutions Plus',
     description: 'Commercial sewer cleaning and repair in NJ for clogs, backups, hydro jetting, damaged pipes, replacements and tree root problems.',
-    images: ['https://www.drainsolutionplus.com/images/commercial-sewer-service.jpg'],
+    images: ['/images/client-images/slab-sewer-repair.webp'],
   },
 };
 
@@ -284,14 +284,12 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
   );
 }

@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.jpg",
-        alt: "Drain Solutions Plus drain and sewer services in Essex County NJ",
+        url: "/images/njj.webp",
+        alt: "Northern New Jersey service area map showing coverage that includes Essex County",
       },
     ],
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Expert Drain Cleaning & Sewer Services in Essex County, NJ",
     description: "Residential and commercial drain, sewer, plumbing and pump services throughout Essex County, NJ.",
-    images: ["https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.jpg"],
+    images: ["/images/njj.webp"],
   },
   other: {
     referrer: "strict-origin-when-cross-origin",
@@ -72,11 +72,11 @@ const jsonLd = {
       "url": "https://www.drainsolutionplus.com/",
       "telephone": "+1-201-881-9622",
       "description": "Drain Solutions Plus provides residential and commercial drain, sewer, plumbing, leak repair, hydro jetting, video inspection, sump pump, and sewage ejector pump services throughout Northern New Jersey.",
-      "image": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.jpg",
+      "image": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.webp",
       "logo": {
         "@type": "ImageObject",
         "@id": "https://www.drainsolutionplus.com/#logo",
-        "url": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.jpg"
+        "url": "https://www.drainsolutionplus.com/wp-content/uploads/2024/01/drain-solutions-plus.webp"
       },
       "priceRange": "$$",
       "address": {
@@ -170,16 +170,12 @@ export default function EssexCountyLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
         {children}
-      </body>
-    </html>
+    </>
   );
 }

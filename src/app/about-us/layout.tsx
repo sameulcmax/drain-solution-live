@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     siteName: 'Drain Solutions Plus',
     images: [
       {
-        url: 'https://www.drainsolutionplus.com/images/drain-solutions-plus-about-us.jpg',
-        alt: 'Drain Solutions Plus drain and sewer service professionals in Hawthorne NJ',
+        url: '/images/client-images/commercial-drain-repair-1.webp',
+        alt: 'Drain technicians completing a commercial drain repair',
       },
     ],
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Drain Solutions Plus | Northern NJ Drain & Sewer Specialists',
     description: 'Discover Drain Solutions Plus in Hawthorne, NJ and our commercial and residential drain, sewer, inspection and emergency services across Northern NJ.',
-    images: ['https://www.drainsolutionplus.com/images/drain-solutions-plus-about-us.jpg'],
+    images: ['/images/client-images/commercial-drain-repair-1.webp'],
   },
 };
 
@@ -216,14 +216,12 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
   );
 }

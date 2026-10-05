@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://www.drainsolutionplus.com/images/successful-drain-sewer-projects-north-nj.jpg",
+        url: "/images/before-after/4.webp",
         alt: "Successful drain and sewer projects completed by Drain Solutions Plus in Northern New Jersey",
       },
     ],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Drain & Sewer Projects in Northern NJ | Drain Solutions Plus",
     description: "Explore successful commercial and residential drain and sewer projects completed by Drain Solutions Plus throughout Northern New Jersey.",
-    images: ["https://www.drainsolutionplus.com/images/successful-drain-sewer-projects-north-nj.jpg"],
+    images: ["/images/before-after/4.webp"],
   },
   other: {
     referrer: "strict-origin-when-cross-origin",
@@ -182,16 +182,12 @@ export default function SuccessfulProjectsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
         {children}
-      </body>
-    </html>
+    </>
   );
 }

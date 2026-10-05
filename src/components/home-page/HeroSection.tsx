@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/* ================= BACKGROUND STATIC IMAGE ================= */}
       <div className="absolute inset-0 -z-20 h-full w-full">
         <Image
-          src="/images/1.png"
+          src="/images/1.webp"
           alt="Hero Background"
           fill
           priority
@@ -19,7 +19,7 @@ export default function HeroSection() {
 
         {/* Dark overlay & left vignette so text is always crisp */}
         <div className="absolute inset-0" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
+        <div className="absolute inset-0" />
       </div>
 
       {/* ================= MAIN HERO CONTAINER (FLUSH LEFT) ================= */}
@@ -27,18 +27,17 @@ export default function HeroSection() {
         <div className="max-w-4xl text-left">
           
           {/* ================= MAIN HEADING ================= */}
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-white drop-shadow-[0_3px_10px_rgba(0,0,0,0.85)]">
-            The Sewer &amp; Drain Experts{" "}
-            <span className="block sm:inline text-[#e24442] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              That You Can Trust
-            </span>
-          </h1>
-
+<h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-white">
+  <span className="[text-shadow:_1px_1px_0_#9ca3af,_-1px_-1px_0_#9ca3af,_1px_-1px_0_#9ca3af,_-1px_1px_0_#9ca3af,_0_0_12px_rgba(156,163,175,0.4)]" >The Sewer &amp; Drain Experts{" "}</span>
+  <span className="block sm:inline text-[#014485] [text-shadow:_1px_1px_0_#ffdf20,_-1px_-1px_0_#9ca3af,_1px_-1px_0_#ffdf20,_-1px_1px_0_#ffdf20,_0_0_12px_rgba(156,163,175,0.4)]">
+    That You Can Trust
+  </span>
+</h1>
           {/* ================= REDUCED PADDING & INCREASED IMAGE WIDTH ================= */}
           <div className="mt-6 inline-block rounded-lg overflow-hidden shadow-lg bg-white border border-stone-200">
             <div className="relative h-12 sm:h-14 px-1 py-1 flex items-center justify-center">
               <Image
-                src="/images/five-stars.png"
+                src="/images/five-stars.webp"
                 alt="5 Star Google Reviews"
                 width={260}
                 height={55}

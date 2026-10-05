@@ -1,34 +1,36 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const servicedLocations = [
-  "Bergen County, NJ",
-  "Essex County, NJ",
-  "Hudson County, NJ",
-  "Passaic County, NJ",
+  { name: "Bergen County, NJ", href: "/bergen-county-nj" },
+  { name: "Essex County, NJ", href: "/essex-county-nj" },
+  { name: "Hudson County, NJ", href: "/hudson-county-nj" },
+  { name: "Passaic County, NJ", href: "/passaic-county-nj" },
 ];
 
 const companyLinks = [
   { name: "About Us", href: "/about-us" },
   { name: "Services", href: "/our-services" },
-  { name: "Our Projects", href: "/project-gallery" },
-  { name: "Blog", href: "/blog" },
+  { name: "Our Projects", href: "/successful-drain-sewer-projects-north-nj" },
+  { name: "Reviews", href: "/reviews" },
   { name: "Contact", href: "/contact" },
 ];
 
 const serviceLinks = [
-  { name: "Sewer", href: "/our-services/residential-drain-cleaning" },
-  { name: "Drains", href: "/our-services/residential-drain-repairs" },
-  { name: "Faucet and leak repairs", href: "/our-services/commercial-drain-cleaning" },
-  { name: "Clogged Drains", href: "/our-services/commercial-drain-repairs" },
-  { name: " ", href: "/our-services/sewer-repair-cleaning" },
-  { name: "Toilet repairs", href: "/our-services/faucet-leak-repairs" },
+  { name: "Residential Drain Cleaning", href: "/our-services/residential-drain-cleaning" },
+  { name: "Residential Drain Repairs", href: "/our-services/residential-drain-repairs" },
+  { name: "Commercial Drain Cleaning", href: "/our-services/commercial-drain-cleaning" },
+  { name: "Commercial Drain Repairs", href: "/our-services/commercial-drain-repairs" },
+  { name: "Sewer and Drain Cleaning", href: "/our-services/sewer-and-drain-cleaning" },
+  { name: "Sewer and Drain Repairs", href: "/our-services/sewer-and-drain-repairs" },
 ];
 
 export default function Footer() {
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
   return (
     <footer className="relative w-full bg-[#014485] text-white">
       {/* Top Red Accent Horizon Line */}
@@ -44,7 +46,7 @@ export default function Footer() {
           <div className="lg:col-span-3 flex flex-col items-start space-y-4">
             <div className="rounded-xl bg-white px-5 py-3.5 shadow-md flex items-center justify-center w-full max-w-[210px] transition-transform duration-200 hover:scale-[1.02]">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="Drain Solutions Plus"
                 width={190}
                 height={80}
@@ -59,14 +61,31 @@ export default function Footer() {
 
           {/* 2. LOCATIONS (2 cols) */}
           <div className="lg:col-span-2 space-y-3.5">
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 block">
+            <span className="hidden text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 md:block">
               Locations
             </span>
-            <ul className="space-y-2.5 text-xs sm:text-[13px] text-white/90">
+            <button
+              type="button"
+              aria-expanded={openSection === "locations"}
+              aria-controls="footer-locations"
+              onClick={() => setOpenSection(openSection === "locations" ? null : "locations")}
+              className="flex w-full items-center justify-between border-b border-white/15 pb-3 text-left text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 md:hidden"
+            >
+              Locations
+              <svg className={`h-4 w-4 transition-transform ${openSection === "locations" ? "rotate-180" : ""}`} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </button>
+            <ul id="footer-locations" className={`${openSection === "locations" ? "block" : "hidden"} space-y-2.5 text-xs text-white/90 sm:text-[13px] md:block`}>
               {servicedLocations.map((loc) => (
-                <li key={loc} className="flex items-center space-x-1.5 transition-colors hover:text-white">
+                <li key={loc.href} className="flex items-center space-x-1.5 transition-colors hover:text-white">
                   <span className="h-1 w-1 rounded-full bg-[#c02f2d]" />
-                  <span>{loc}</span>
+                  <Link
+                    href={loc.href}
+                    className="hover:underline underline-offset-4 focus-visible:outline-none focus-visible:underline"
+                  >
+                    {loc.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -74,10 +93,22 @@ export default function Footer() {
 
           {/* 3. COMPANY (2 cols) */}
           <div className="lg:col-span-2 space-y-3.5">
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 block">
+            <span className="hidden text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 md:block">
               Company
             </span>
-            <ul className="space-y-2.5 text-xs sm:text-[13px] text-white/90">
+            <button
+              type="button"
+              aria-expanded={openSection === "company"}
+              aria-controls="footer-company"
+              onClick={() => setOpenSection(openSection === "company" ? null : "company")}
+              className="flex w-full items-center justify-between border-b border-white/15 pb-3 text-left text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 md:hidden"
+            >
+              Company
+              <svg className={`h-4 w-4 transition-transform ${openSection === "company" ? "rotate-180" : ""}`} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </button>
+            <ul id="footer-company" className={`${openSection === "company" ? "block" : "hidden"} space-y-2.5 text-xs text-white/90 sm:text-[13px] md:block`}>
               {companyLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -93,10 +124,22 @@ export default function Footer() {
 
           {/* 4. SERVICES (2 cols) */}
           <div className="lg:col-span-2 space-y-3.5">
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 block">
+            <span className="hidden text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 md:block">
               Services
             </span>
-            <ul className="space-y-2.5 text-xs sm:text-[13px] text-white/90">
+            <button
+              type="button"
+              aria-expanded={openSection === "services"}
+              aria-controls="footer-services"
+              onClick={() => setOpenSection(openSection === "services" ? null : "services")}
+              className="flex w-full items-center justify-between border-b border-white/15 pb-3 text-left text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 md:hidden"
+            >
+              Services
+              <svg className={`h-4 w-4 transition-transform ${openSection === "services" ? "rotate-180" : ""}`} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </button>
+            <ul id="footer-services" className={`${openSection === "services" ? "block" : "hidden"} space-y-2.5 text-xs text-white/90 sm:text-[13px] md:block`}>
               {serviceLinks.map((svc) => (
                 <li key={svc.name}>
                   <Link
@@ -146,32 +189,46 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex items-center space-x-2.5 pt-1 text-white/80">
               <a
-                href="#"
+                href="https://www.facebook.com/people/Drain-Solutions-Plus/61594994970578/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 hover:bg-white hover:text-[#014485] transition-colors"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1877f2] hover:scale-110 transition-transform shadow-sm"
               >
-                <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/>
+                <svg className="h-3.5 w-3.5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
                 </svg>
               </a>
 
               <a
-                href="#"
-                aria-label="LinkedIn"
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 hover:bg-white hover:text-[#014485] transition-colors"
-              >
-                <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2m1.39 9.74v-8.37H5.07v8.37z"/>
-                </svg>
-              </a>
-
-              <a
-                href="#"
+                href="https://www.instagram.com/drainsolutionsplus"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 hover:bg-white hover:text-[#c02f2d] transition-colors"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] hover:scale-110 transition-transform shadow-sm"
               >
-                <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
+                <svg className="h-3.5 w-3.5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a
+                href="https://www.yelp.com/biz/drain-solutions-plus-clifton-6"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Yelp"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-white hover:scale-110 transition-transform shadow-sm"
+              >
+                <Image src="/images/yelp-icon.webp" alt="" width={20} height={20} className="h-5 w-5 object-contain" />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UC_Wp9WULUYRAF9ao0Fmzb2Q"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-[#ff0000] hover:scale-110 transition-transform shadow-sm"
+              >
+                <svg className="h-3.5 w-3.5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z" />
                 </svg>
               </a>
             </div>
@@ -182,11 +239,6 @@ export default function Footer() {
         {/* ================= BOTTOM BAR ================= */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/50 space-y-2 sm:space-y-0">
           <p>© 2026 Drain Solutions Plus. All Rights Reserved.</p>
-          <div className="flex items-center space-x-4">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <span>•</span>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-          </div>
         </div>
 
       </div>

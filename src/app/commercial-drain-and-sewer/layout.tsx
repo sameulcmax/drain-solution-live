@@ -64,8 +64,8 @@ export const metadata: Metadata = {
     siteName: 'Drain Solutions Plus',
     images: [
       {
-        url: 'https://www.drainsolutionplus.com/images/commercial-drain-and-sewer.jpg',
-        alt: 'Commercial drain cleaning and clogged drain services by Drain Solutions Plus in Northern New Jersey',
+        url: '/images/client-images/iron-sewer-replaced-with-pvc1.webp',
+        alt: 'Commercial sewer pipe replacement with new PVC piping',
       },
     ],
   },
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Commercial Drain Cleaning NJ | Clogged Drain Services',
     description: 'Commercial drain cleaning for clogged kitchen, bathroom, laundry and floor drains in Hawthorne and throughout Northern New Jersey.',
-    images: ['https://www.drainsolutionplus.com/images/commercial-drain-and-sewer.jpg'],
+    images: ['/images/client-images/iron-sewer-replaced-with-pvc1.webp'],
   },
 };
 
@@ -284,14 +284,12 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
   );
 }

@@ -1,11 +1,14 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 
 interface Review {
   id: number;
   name: string;
   location: string;
+  county: string;
+  countyHref: string;
   rating: number;
   service: string;
   review: string;
@@ -15,7 +18,9 @@ const reviewsData: Review[] = [
   {
     id: 1,
     name: "Michael R.",
-    location: "Paramus, NJ (Bergen County)",
+    location: "Paramus, NJ",
+    county: "Bergen County",
+    countyHref: "/bergen-county-nj",
     rating: 5,
     service: "Emergency Drain Cleaning",
     review:
@@ -24,7 +29,9 @@ const reviewsData: Review[] = [
   {
     id: 2,
     name: "Sarah L.",
-    location: "Montclair, NJ (Essex County)",
+    location: "Montclair, NJ",
+    county: "Essex County",
+    countyHref: "/essex-county-nj",
     rating: 5,
     service: "Residential Drain Repairs",
     review:
@@ -33,7 +40,9 @@ const reviewsData: Review[] = [
   {
     id: 3,
     name: "David K.",
-    location: "Hoboken, NJ (Hudson County)",
+    location: "Hoboken, NJ",
+    county: "Hudson County",
+    countyHref: "/hudson-county-nj",
     rating: 5,
     service: "Commercial Hydro Jetting",
     review:
@@ -42,7 +51,9 @@ const reviewsData: Review[] = [
   {
     id: 4,
     name: "Anthony M.",
-    location: "Wayne, NJ (Passaic County)",
+    location: "Wayne, NJ",
+    county: "Passaic County",
+    countyHref: "/passaic-county-nj",
     rating: 5,
     service: "Main Line Video Inspection",
     review:
@@ -51,7 +62,9 @@ const reviewsData: Review[] = [
   {
     id: 5,
     name: "Jennifer P.",
-    location: "Hackensack, NJ (Bergen County)",
+    location: "Hackensack, NJ",
+    county: "Bergen County",
+    countyHref: "/bergen-county-nj",
     rating: 5,
     service: "Faucet & Leak Repairs",
     review:
@@ -168,7 +181,14 @@ export default function ReviewsSection() {
                             {item.name}
                           </h4>
                           <p className="text-xs sm:text-sm text-white/80 font-medium">
-                            {item.location}
+                            {item.location} (
+                            <Link
+                              href={item.countyHref}
+                              className="underline decoration-white/60 underline-offset-2 hover:decoration-white focus-visible:outline-none focus-visible:underline"
+                            >
+                              {item.county}
+                            </Link>
+                            )
                           </p>
                         </div>
 

@@ -4,9 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allServicesData } from "@/data/servicesData";
 
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer"; 
-
 interface PageProps {
   params: Promise<{
     slug: string;
@@ -29,8 +26,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   return (
     <>
-      <Header />
-
       <div className="min-h-screen bg-[#fafaf9]">
         {/* ================= HERO SECTION ================= */}
         <section className="relative w-full overflow-hidden py-16 sm:py-20 lg:py-24">
@@ -154,7 +149,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       </div>
 
-      <Footer />
     </>
   );
 }

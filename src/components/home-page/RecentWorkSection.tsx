@@ -39,9 +39,9 @@ export default function RecentWorkSection() {
               controls
               playsInline
               preload="metadata"
-              poster="/images/vid-img.webp"
+              poster="/vids/vid-img.webp"
             >
-              <source src="/images/vid.mp4" type="video/mp4" />
+              <source src="/vids/vid.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -50,7 +50,7 @@ export default function RecentWorkSection() {
         {/* ================= PORTFOLIO CTA BUTTON ================= */}
         <div className="mt-10 sm:mt-12">
           <Link
-            href="/project-gallery"
+            href="/successful-drain-sewer-projects-north-nj"
             className="group inline-flex items-center space-x-3 rounded-lg bg-[#014485] px-10 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-white shadow-xl border border-white/20 transition-all duration-200 hover:bg-[#003366] hover:scale-105 active:scale-95"
           >
             <span>Portfolio</span>

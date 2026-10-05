@@ -2,12 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const serviceCounties = [
-  "Bergen County, NJ",
-  "Essex County, NJ",
-  "Hudson County, NJ",
-  "Passaic County, NJ",
+  { name: "Bergen County, NJ", href: "/bergen-county-nj" },
+  { name: "Essex County, NJ", href: "/essex-county-nj" },
+  { name: "Hudson County, NJ", href: "/hudson-county-nj" },
+  { name: "Passaic County, NJ", href: "/passaic-county-nj" },
 ];
 
 export default function CoverageSection() {
@@ -44,22 +45,27 @@ export default function CoverageSection() {
 
               <ul className="space-y-3 pt-1">
                 {serviceCounties.map((county) => (
-                  <li key={county} className="flex items-center space-x-3.5">
-                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#014485] text-white">
-                      <svg
-                        className="h-3.5 w-3.5 fill-none stroke-current stroke-[3]"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-base sm:text-lg font-bold text-white tracking-wide">
-                      {county}
-                    </span>
+                  <li key={county.href}>
+                    <Link
+                      href={county.href}
+                      className="group inline-flex items-center gap-3.5 rounded-md py-1 pr-3 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#c02f2d]"
+                    >
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#014485] text-white transition-colors group-hover:bg-white group-hover:text-[#014485]">
+                        <svg
+                          className="h-3.5 w-3.5 fill-none stroke-current stroke-[3]"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </span>
+                      <span className="text-base font-bold tracking-wide text-white underline decoration-white/70 decoration-2 underline-offset-4 transition-colors group-hover:decoration-yellow-300 sm:text-lg">
+                        {county.name}
+                      </span>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -91,7 +97,7 @@ export default function CoverageSection() {
           <div className="flex justify-center lg:justify-end lg:col-span-5 w-full">
             <div className="relative w-full max-w-[420px] flex items-center justify-center">
               <Image
-                src="/images/njj.png"
+                src="/images/njj.webp"
                 alt="Northern New Jersey Service Area Map"
                 width={500}
                 height={700}

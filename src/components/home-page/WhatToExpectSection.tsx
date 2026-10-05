@@ -106,7 +106,7 @@ export default function WhatToExpectSection() {
                 <p className="mt-2 text-xs sm:text-sm leading-relaxed text-white/90">We believe in honest recommendations and treating you the way we would want to be treated.</p>
               </div>
               <div className="relative z-10 mt-6">
-                <a href="tel:" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-[#014484] shadow-md transition-all hover:bg-gray-100 active:scale-95">
+                <a href="tel:2018819622" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-[#014484] shadow-md transition-all hover:bg-gray-100 active:scale-95">
                   <span>Call Drain Solutions Plus</span>
                   <ArrowRight className="h-3.5 w-3.5 text-[#C02F2D]" strokeWidth={2.5} />
                 </a>
@@ -140,7 +140,7 @@ export default function WhatToExpectSection() {
               <p className="mt-2 text-xs leading-relaxed text-white/90">We believe in honest recommendations and treating you the way we would want to be treated.</p>
             </div>
             <div className="relative z-10 mt-6">
-              <a href="tel:" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-[#014484] shadow-md transition-all hover:bg-gray-100 active:scale-95">
+              <a href="tel:2018819622" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-[#014484] shadow-md transition-all hover:bg-gray-100 active:scale-95">
                 <span>Call Drain Solutions Plus</span>
                 <ArrowRight className="h-3.5 w-3.5 text-[#C02F2D]" strokeWidth={2.5} />
               </a>
@@ -156,12 +156,12 @@ export default function WhatToExpectSection() {
             </div>
             <p className="text-sm font-medium text-gray-700">
               Have a plumbing or drain problem?{" "}
-              <span className="font-bold text-[#014484]">Give Drain Solutions Plus a call. We're ready to help.</span>
+              <span className="font-bold text-[#014484]">Give Drain Solutions Plus a call. We&apos;re ready to help.</span>
             </p>
           </div>
 
           <a
-            href="tel:"
+            href="tel:2018819622"
             className="group inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#C02F2D] transition-colors hover:text-[#a82624]"
           >
             <span>Get Help Today</span>

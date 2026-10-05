@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://www.drainsolutionplus.com/images/drain-solutions-plus-services.jpg",
-        alt: "Commercial drain and sewer services from Drain Solutions Plus in Northern New Jersey",
+        url: "/images/client-images/kitchen-cleaning.webp",
+        alt: "Technician cleaning a kitchen drain line",
       },
     ],
   },
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Drain & Sewer Services NJ | Commercial Drain Cleaning & Repair",
     description: "Explore commercial and residential drain, sewer, inspection, repair and emergency services from Drain Solutions Plus across Northern New Jersey.",
-    images: ["https://www.drainsolutionplus.com/images/drain-solutions-plus-services.jpg"],
+    images: ["/images/client-images/kitchen-cleaning.webp"],
   },
   other: {
     referrer: "strict-origin-when-cross-origin",
@@ -318,16 +318,12 @@ export default function OurServicesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
         {children}
-      </body>
-    </html>
+    </>
   );
 }

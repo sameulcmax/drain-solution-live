@@ -103,26 +103,17 @@ export default function Header() {
               style={{ clipPath: diagonalCut }}
             >
               <div
-                className="h-full flex items-center bg-white 
-                  pl-2 xs:pl-3.5 sm:pl-6 lg:pl-8 
-                  pr-7 xs:pr-8 sm:pr-10 md:pr-12 lg:pr-14"
+                className="h-full flex items-center bg-white pl-2 xs:pl-3.5 sm:pl-6 lg:pl-8 pr-7 xs:pr-8 sm:pr-10 md:pr-12 lg:pr-14"
                 style={{ clipPath: diagonalCut }}
               >
                 <Link href="/" className="inline-flex items-center">
                   <Image
-                    src="/images/logo.png"
-                    alt="Company Logo"
+                    src="/images/logo.webp"
+                    alt="Drain Solution Plus company logo"
                     width={380}
                     height={100}
                     priority
-                    className="object-contain transition-transform duration-200 hover:scale-105
-                      w-[100px] h-[58px]
-                      max-[389px]:w-[90px] max-[389px]:h-[50px]
-                      xs:w-[200px] xs:h-[80px]
-                      sm:w-[210px] sm:h-[72px]
-                      md:w-[240px] md:h-[75px]
-                      lg:w-[280px] lg:h-[85px]
-                      2xl:w-[340px] 2xl:h-[95px]"
+                    className="object-contain transition-transform duration-200 hover:scale-105 w-[100px] h-[58px] max-[389px]:w-[90px] max-[389px]:h-[50px] xs:w-[200px] xs:h-[80px] sm:w-[210px] sm:h-[72px] md:w-[240px] md:h-[75px] lg:w-[280px] lg:h-[85px] 2xl:w-[340px] 2xl:h-[95px]"
                   />
                 </Link>
               </div>
@@ -131,17 +122,12 @@ export default function Header() {
 
           <div className="flex xl:hidden items-center ml-2 xs:ml-3 sm:ml-4 lg:ml-6 shrink-0 z-20 max-[389px]:hidden">
             <Image
-              src="/images/batch.png"
+              src="/images/batch.webp"
               alt="Anniversary Badge"
               width={160}
               height={160}
               priority
-              className="object-contain drop-shadow-md transition-transform duration-200 hover:scale-105
-                w-[56px] h-[56px]
-                xs:w-[64px] xs:h-[64px]
-                sm:w-[76px] sm:h-[76px]
-                md:w-[90px] md:h-[90px]
-                lg:w-[110px] lg:h-[110px]"
+              className="object-contain drop-shadow-md transition-transform duration-200 hover:scale-105 w-[56px] h-[56px] xs:w-[64px] xs:h-[64px] sm:w-[76px] sm:h-[76px] md:w-[90px] md:h-[90px] lg:w-[110px] lg:h-[110px]"
             />
           </div>
         </div>
@@ -239,14 +225,12 @@ export default function Header() {
         {/* ================= RIGHT SECTION ================= */}
         <div className="hidden xl:flex items-center space-x-5 2xl:space-x-6 shrink-0 z-20">
           <Image
-            src="/images/batch.png"
+            src="/images/batch.webp"
             alt="Anniversary Badge"
             width={95}
             height={95}
             priority
-            className="object-contain drop-shadow-lg transition-transform duration-200 hover:scale-105
-              w-[85px] h-[75px]
-              2xl:w-[86px] 2xl:h-[86px]"
+            className="object-contain drop-shadow-lg transition-transform duration-200 hover:scale-105 w-[85px] h-[75px] 2xl:w-[86px] 2xl:h-[86px]"
           />
 
           <a

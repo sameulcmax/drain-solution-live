@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function TopBar() {
   const [dateTime, setDateTime] = useState<string>("");
@@ -11,7 +12,7 @@ export default function TopBar() {
       const now = new Date();
       
       const options: Intl.DateTimeFormatOptions = {
-        month: "short",
+        month: "numeric",
         day: "numeric",
         year: "numeric",
         hour: "numeric",
@@ -20,7 +21,7 @@ export default function TopBar() {
         hour12: true,
       };
 
-      setDateTime(new Intl.DateTimeFormat(undefined, options).format(now));
+      setDateTime(new Intl.DateTimeFormat("en-US", options).format(now));
     };
 
     updateDateTime();
@@ -74,7 +75,7 @@ export default function TopBar() {
         <div className="flex items-center justify-end space-x-3 sm:justify-center">
           {/* Facebook */}
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/people/Drain-Solutions-Plus/61594994970578/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-7 h-7 rounded-full bg-[#1877f2] flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
@@ -85,22 +86,10 @@ export default function TopBar() {
             </svg>
           </a>
 
-          {/* Yelp */}
-          <a
-            href="https://yelp.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-7 h-7 rounded-full bg-[#d32323] flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
-            aria-label="Yelp"
-          >
-            <svg className="w-4 h-4 fill-white" viewBox="0 0 384 512">
-              <path d="M42.6 288.9l104.3-33.1c11.7-3.7 22.3 8.3 16.3 18.5l-54 92.4c-6.8 11.7-22.3 14.5-33.1 5.8l-37-30c-10.7-8.6-11.4-24.5-3.5-36.4l7-7.2zm148.6-69l29.4-106.6c3.4-12.4-7.5-23.7-19.8-20.6L99.2 118c-13.6 3.4-20.7 18.2-14.7 30.6l21.4 44.5c6.2 12.8 22.8 16.4 34.1 7.7l51.2-40.9zm27.8 77.1l65.8 84.4c8.1 10.4 24.3 10.2 32.2-.4l25.8-34.9c7.9-10.7 5.1-25.7-5.8-33.2l-91.8-63.4c-11.1-7.7-25.2 2.6-21.7 15.6l-4.5 31.9zm135.9-96.1l-105-24.6c-12.8-3-19.1-17.7-11.8-27.9l58.1-80.9c7.7-10.8 23.3-13.3 34-5.2l34.8 26.2c10.7 8.1 13.5 23.1 6.1 34.1l-16.2 38.3zM212.1 480c10.3 9.4 26.2 7.7 34.6-3.6l26.8-36.1c8.4-11.3 6-27.3-5.2-35.4l-89.9-65c-11.4-8.2-26.6 1.7-23.5 15.3l17.4 97.5c2 11.2 10.9 19.3 19.8 27.3z"/>
-            </svg>
-          </a>
 
           {/* Instagram */}
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/drainsolutionsplus"
             target="_blank"
             rel="noopener noreferrer"
             className="w-7 h-7 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
@@ -110,6 +99,28 @@ export default function TopBar() {
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
             </svg>
           </a>
+          {/* Yelp */}
+          <a
+            href="https://www.yelp.com/biz/drain-solutions-plus-clifton-6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-7 h-7 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
+            aria-label="Yelp"
+          >
+            <Image src="/images/yelp-icon.webp" alt="" width={20} height={20} className="h-5 w-5 object-contain" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UC_Wp9WULUYRAF9ao0Fmzb2Q"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-7 h-7 rounded-full bg-[#ff0000] flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
+            aria-label="YouTube"
+          >
+            <svg className="h-4 w-4 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z" />
+            </svg>
+          </a>
+          
         </div>
 
         {/* RIGHT SECTION: Flush to the far-right end */}

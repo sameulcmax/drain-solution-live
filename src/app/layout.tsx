@@ -2,6 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import React from "react";
 import { FixedBottomBar } from "@/components/layout/FixedBottomBar";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import TopBar from "@/components/layout/TopBar";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -29,7 +33,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Drain Solutions Plus" }],
   metadataBase: new URL("https://www.drainsolutionplus.com"),
   icons: {
-    icon: "/images/favicon.png",
+    icon: "/images/favicon.webp",
   },
   alternates: {
     canonical: "/",
@@ -47,8 +51,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://www.drainsolutionplus.com/images/drain-solutions-plus-commercial-drain-sewer-services.jpg",
-        alt: "Drain Solutions Plus commercial drain and sewer cleaning services in New Jersey",
+        url: "/images/client-images/drain-pipe-video-inspection.webp",
+        alt: "Technician performing a sewer pipe video inspection",
       },
     ],
   },
@@ -56,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Drain Cleaning NJ | Commercial Sewer & Drain Services",
     description: "Commercial drain cleaning, sewer cleaning, sewer repair, camera inspections and emergency drain services across Northern New Jersey.",
-    images: ["https://www.drainsolutionplus.com/images/drain-solutions-plus-commercial-drain-sewer-services.jpg"],
+    images: ["/images/client-images/drain-pipe-video-inspection.webp"],
   },
   other: {
     referrer: "strict-origin-when-cross-origin",
@@ -77,9 +81,9 @@ const jsonLd = {
       "url": "https://www.drainsolutionplus.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.drainsolutionplus.com/path-to-your-logo.png"
+        "url": "https://www.drainsolutionplus.com/path-to-your-logo.webp"
       },
-      "image": "https://www.drainsolutionplus.com/path-to-your-business-image.jpg",
+      "image": "https://www.drainsolutionplus.com/path-to-your-business-image.webp",
       "description": "Drain Solutions Plus provides commercial and residential drain cleaning, sewer cleaning, sewer repair, video sewer inspections, toilet repair, faucet and leak repair, frozen pipe repair, and emergency drain services throughout Northern New Jersey.",
       "telephone": "YOUR-VERIFIED-PHONE",
       "priceRange": "$$",
@@ -141,7 +145,7 @@ const jsonLd = {
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://www.drainsolutionplus.com/path-to-your-business-image.jpg"
+        "url": "https://www.drainsolutionplus.com/path-to-your-business-image.webp"
       },
       "inLanguage": "en-US"
     },
@@ -218,11 +222,12 @@ const jsonLd = {
   ]
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${poppins.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -231,12 +236,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full flex flex-col pb-16 md:pb-0">
+        <TopBar />
+        <Header />
         {children}
+        <Footer />
         <FixedBottomBar
           phoneNumber="+12018819622"
           servicesHref="/our-services"
           locationHref="https://share.google/bfA0LuV5SfVzdp57H"
         />
+        <ScrollToTop />
       </body>
     </html>
   );

@@ -51,7 +51,7 @@ export default function AboutSection() {
               }`}
             >
               <Image
-                src="/images/5.png"
+                src="/images/5.webp"
                 alt="Drain Solutions Plus Service Fleet Vehicle"
                 width={700}
                 height={420}
