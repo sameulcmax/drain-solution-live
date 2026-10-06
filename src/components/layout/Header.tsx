@@ -4,60 +4,13 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { serviceGroups } from "./serviceNavigation";
 
 interface NavItem {
   name: string;
   href: string;
   hasDropdown?: boolean;
 }
-
-interface ServiceMenuItem {
-  name: string;
-  href: string;
-  desc?: string;
-}
-
-interface ServiceGroup {
-  title: string;
-  items: ServiceMenuItem[];
-}
-
-const serviceGroups: ServiceGroup[] = [
-  {
-    title: "Services",
-    items: [
-      { name: "Residential Drain Cleaning", href: "/our-services/residential-drain-cleaning" },
-      { name: "Residential Drain Repairs", href: "/our-services/residential-drain-repairs" },
-      { name: "Commercial Drain Repairs", href: "/our-services/commercial-drain-repairs" },
-      { name: "Commercial Drain Cleaning", href: "/our-services/commercial-drain-cleaning" },
-      { name: "Faucet & Leak Repairs", href: "/our-services/faucet-leak-repairs" },
-      { name: "Sewer and Drain Cleaning", href: "/our-services/sewer-and-drain-cleaning" },
-      { name: "Toilet Clogs", href: "/our-services/toilet-clogs" },
-      { name: "Residential Tub Clogs", href: "/our-services/tub-clogs" },
-      { name: "Sink Clogs", href: "/our-services/sink-clogs" },
-      { name: "Sewer and Drain Repairs", href: "/our-services/sewer-and-drain-repairs" },
-      { name: "Sewer and Drain Video Inspections", href: "/our-services/sewer-and-drain-video-inspections" },
-      { name: "Hydro Jetting", href: "/our-services/hydro-jetting" },
-      { name: "Flush Valve Leak Repairs", href: "/our-services/flush-valve-leak-repairs" },
-      { name: "Sump Pump Repairs or Replacement", href: "/our-services/sump-pump-repairs-or-replacement" },
-      { name: "Sewage Ejector Pump Repairs or Replacement", href: "/our-services/sewage-ejector-pumps-repairs-or-replacement" },
-    ],
-  },
-  {
-    title: "Residential",
-    items: [
-      { name: "Residential Drain", desc: "Top-notch household drain cleaning", href: "/residential-drain-service" },
-      { name: "Residential Sewer", desc: "Precise home piping restorations", href: "/residential-sewer-service" },
-    ],
-  },
-  {
-    title: "Commercial",
-    items: [
-      { name: "Commercial Drain", desc: "Heavy-duty commercial cleaning", href: "/commercial-drain-service" },
-      { name: "Commercial Sewer", desc: "Industrial and commercial repairs", href: "/commercial-sewer-service" },
-    ],
-  },
-];
 
 const navLinks: NavItem[] = [
   { name: "Home", href: "/" },
@@ -89,7 +42,7 @@ export default function Header() {
   const diagonalCut = "polygon(0 0, 100% 0, calc(100% - 24px) 100%, 0 100%)";
 
   return (
-    <header className="relative z-[100] w-full bg-[#c02f2d] shadow-md">
+    <header className="sticky top-0 z-[100] w-full bg-[#c02f2d] shadow-md">
       <div className="mx-auto w-full max-w-[1920px] flex h-[70px] max-[389px]:h-16 xs:h-[80px] sm:h-[90px] md:h-[100px] lg:h-[110px] 2xl:h-[118px] items-center justify-between pr-2 xs:pr-3 sm:pr-6 lg:pr-8">
         
         {/* ================= LEFT SECTION: LOGO TAB + BADGE ================= */}
